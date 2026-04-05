@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --font-inter: "Inter", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-DmSans {
+  font-family: var(--font-dm-sans);
+}
+
+
+:root{
+  --main-color: #0090f0;
+  --p-color: #7b7b7b;
+  --bg-color: #f3f3f3;
+  --white-color: #fff;
+  --color-heading: #253237;
+  --border-color: #d6d6d6d5;
+}
+
+h1,h2,h3,h4,h5,h6{
+color: var(--color-heading);
+font-family: var(--font-dm-sans);
+}
+span{
+  color: var(--main-color);
+}
+p{
+  color: var(--p-color);
+}
+input,button,select,textarea{
+  outline: none;
+  border:none
+}
+a{
+  text-decoration: none;
+  color: var(--color-heading);
+}
