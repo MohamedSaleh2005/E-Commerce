@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { DM_Sans, Geist_Mono, Inter } from "next/font/google";
+import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
+import TopHeader from "@/Components/header/TopHeader";
+import BottomHeader from "@/Components/header/BottomHeader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,9 +27,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${inter.variable} ${dmSans.variable} h-full antialiased no-scrollbar`}
     >
-      <body className="">{children}</body>
+      <body className="">
+        <TopHeader />
+        <BottomHeader />
+        {children}
+      </body>
     </html>
   );
 }

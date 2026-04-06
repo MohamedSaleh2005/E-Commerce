@@ -7,7 +7,7 @@ import { BsCart4 } from 'react-icons/bs';
 export default function TopHeader() {
   return (
     <div>
-      <div className='flex items-center justify-between py-3.75 w-[80%] m-auto'>
+      <div className='flex items-center justify-between py-3.75  w-[80%] m-auto'>
 
         <Link href="/" className='w-40'>
           <Image src={logo} alt="logo" className='w-30' />

@@ -27,17 +27,23 @@ h1,h2,h3,h4,h5,h6{
 color: var(--color-heading);
 font-family: var(--font-dm-sans);
 }
-span{
-  color: var(--main-color);
-}
-p{
-  color: var(--p-color);
-}
+
+
 input,button,select,textarea{
   outline: none;
   border:none
 }
 a{
   text-decoration: none;
-  color: var(--color-heading);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.Close{
+  clip-path: polygon(0 0 , 100% 0 , 100% 100% , 0 100%);
+}
+.Open{
+  clip-path: polygon(0 0 , 100% 0 , 100% 0 , 0 0);
 }
