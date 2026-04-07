@@ -47,3 +47,55 @@ a{
 .Open{
   clip-path: polygon(0 0 , 100% 0 , 100% 0 , 0 0);
 }
+
+
+.hero {
+  position: relative;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+.content{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+}
+.content p{
+  color: var(--p-color);
+}
+
+.content h4{
+  text-transform: uppercase;
+  font-size: 1vw;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 0.4vw;
+}
+.content h3{
+  font-size: 3vw;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  color: var(--main-color);
+  font-weight: bolder;
+  line-height: 1;
+}
+.content p{
+  font-size: 1.1vw;
+  margin-top: 2.5vw;
+  margin-bottom: 2.5vw;
+}
+.btn{
+  padding: 8px 15px;
+  font-size: 14px;
+  text-transform: capitalize;
+  border-radius: 30px;
+  cursor: pointer;
+  background: var(--main-color);
+  color: var(--white-color);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: all 0.3s ease;
+  width: max-content;
+  font-weight: 500;
+}

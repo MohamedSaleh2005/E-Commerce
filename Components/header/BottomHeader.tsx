@@ -47,7 +47,7 @@ export default function BottomHeader() {
             </div>
 
 
-            <div className={`absolute top-full left-0 w-full bg-(--white-color)  border flex flex-col border-[#999] max-h-75 overflow-y-auto no-scrollbar transition-all duration-700 Close ${open ? "Open" : ""}`}>
+            <div className={`absolute top-full left-0 w-full bg-(--white-color)  border flex flex-col border-[#999] max-h-75 overflow-y-auto no-scrollbar transition-all duration-700 Close z-5 ${open ? "Open" : ""}`}>
               {Category.map((cat) => (
                 <Link href={cat.slug} key={cat.slug} className='py-2 px-1 text-sm border-b border-(--border-color)'>{cat.name}</Link>
               ))}
