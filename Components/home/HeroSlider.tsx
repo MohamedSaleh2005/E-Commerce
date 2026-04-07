@@ -8,9 +8,9 @@ import Link from 'next/link';
 export default function HeroSlider() {
     return (
 
-        <div className='hero h-200'>
+        <div className='hero'>
             <div>
-                <Swiper pagination={{ clickable: true }} modules={[Pagination, Autoplay]} loop={true} autoplay={{ delay: 2500, disableOnInteraction: false, }} className="h-95 w-[80%] ">
+                <Swiper pagination={{ clickable: true }} modules={[Pagination, Autoplay]} loop={true} autoplay={{ delay: 2500, disableOnInteraction: false, }} className="h-95">
 
                     <SwiperSlide>
 
@@ -26,9 +26,9 @@ export default function HeroSlider() {
                     <SwiperSlide>
 
                         <div className='content'>
-                            <h4 >Introducing the new</h4>
-                            <h3>Microsoft Xbox <br /> 360 Controller</h3>
-                            <p>Windows Xp/10/8 Ps3, Tv Box</p>
+                            <h4 >new arrival</h4>
+                            <h3>Xiaomi Air 75 <br />Earbuds</h3>
+                            <p>AAC HD Sound Quality</p>
                             <Link href={""} className='btn'>Shop Now</Link>
                         </div>
                         <img src="img\banner_Hero2.jpg" alt="" />
