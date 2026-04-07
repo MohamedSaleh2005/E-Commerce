@@ -6,7 +6,10 @@ export default function Home() {
   return (
      <div className='w-[80%] m-auto'>
      <HeroSlider />
-     <SlideProduct />
+     <SlideProduct title={"Smart Phones"}/>
+     <SlideProduct title={"LapTops"}/>
+     <SlideProduct title={"Watches"}/>
+     <SlideProduct title={"Cars"}/>
      </div>
   )
 }

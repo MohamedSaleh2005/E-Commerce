@@ -10,7 +10,7 @@ export default function HeroSlider() {
 
         <div className='hero'>
             <div>
-                <Swiper pagination={{ clickable: true }} modules={[Pagination, Autoplay]} loop={true} autoplay={{ delay: 2500, disableOnInteraction: false, }} className="h-95">
+                <Swiper pagination={{ clickable: true }} modules={[Pagination, Autoplay]} loop={true} autoplay={{ delay: 3500, disableOnInteraction: false, }} className="h-95">
 
                     <SwiperSlide>
 

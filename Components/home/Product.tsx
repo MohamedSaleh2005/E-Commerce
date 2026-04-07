@@ -5,7 +5,7 @@ import { IoMdShare } from 'react-icons/io'
 
 export default function Product() {
   return (
-    <div className='relative w-50 h-75 bg-(--white-color) py-1.25 px-3.75 border border-(--border-color) hover:border-(--main-color) rounded-[5px] overflow-hidden hover:shadow-lg transition-all duration-300 Card'>
+    <div className='relative mb-15 w-45 h-75 bg-(--white-color) py-1.25 px-3.75 border border-(--border-color) hover:border-(--main-color) rounded-[5px] overflow-hidden hover:shadow-lg transition-all duration-300 Card'>
       <div className='relative h-45 px-2.5 flex items-center justify-center mb-3.25'>
         <img src="https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/1.png" alt="" className=' h-40 w-auto' />
       </div>
