@@ -24,7 +24,6 @@
 }
 
 h1,h3,h4,h5,h6{
-color: var(--color-heading);
 font-family: var(--font-dm-sans);
 }
 
@@ -85,10 +84,10 @@ a{
   margin-bottom: 2.5vw;
 }
 .btn{
-  padding: 8px 15px;
-  font-size: 14px;
+  padding: 5px 10px;
+  font-size: 13px;
   text-transform: capitalize;
-  border-radius: 30px;
+  border-radius: 2px;
   cursor: pointer;
   background: var(--main-color);
   color: var(--white-color);
@@ -100,7 +99,7 @@ a{
   font-weight: 500;
 }
 .btn:hover {
-  transform: scale(0.91);
+  transform: scale(0.96);
 }
 
 .top_slide::after{

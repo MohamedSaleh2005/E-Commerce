@@ -32,7 +32,6 @@ export default function BottomHeader() {
 
   }, [])
 
-  console.log(open);
 
   return (
     <div className='bg-(--main-color) '>
