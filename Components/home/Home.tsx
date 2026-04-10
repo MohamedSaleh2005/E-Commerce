@@ -2,12 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import HeroSlider from './HeroSlider'
 import SlideProduct from './SlideProduct'
-
-type ProductType = {
-  title: string
-  price: number
-  images: string[]
-}
+import {ProductType} from './productType'
 
 const categories = [
   "smartphones",

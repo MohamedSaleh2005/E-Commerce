@@ -2,15 +2,10 @@
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Product from './Product'
+import {ProductType} from './productType'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-type ProductType = {
-  title: string
-  price: number
-  images: string[]
-}
 
 type Props = {
   title: string

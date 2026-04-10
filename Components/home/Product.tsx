@@ -2,12 +2,8 @@ import Link from 'next/link'
 import { FaCartArrowDown, FaRegHeart, FaStar } from 'react-icons/fa'
 import { FaStarHalfStroke } from 'react-icons/fa6'
 import { IoMdShare } from 'react-icons/io'
-type ProductType = {
-  title: string
-  price: number
-  images: string[]
-  id: number
-}
+import {ProductType} from './productType'
+
 type Props = {
   item: ProductType
 }

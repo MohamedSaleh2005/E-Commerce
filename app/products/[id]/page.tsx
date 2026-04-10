@@ -6,21 +6,19 @@ import { FaCartArrowDown, FaRegHeart, FaShare, FaStar } from 'react-icons/fa'
 import { FaStarHalfStroke } from 'react-icons/fa6'
 import { IoMdShare } from 'react-icons/io'
 import { TiShoppingCart } from 'react-icons/ti'
-type ProductType = {
-    title: string
-    price: number
-    brand: string
-    stock: number
-    description: string
-    availabilityStatus: string
-    images: string[]
-    category: string
+import { ProductType } from '@/Components/home/productType'
+type ProductDetailsType = ProductType & {
+  brand: string
+  stock: number
+  description: string
+  availabilityStatus: string
+  category: string
 }
 export default function page() {
 
 
-    const { id } = useParams()
-    const [product, setproduct] = useState<ProductType | null>(null)
+    const { id } = useParams() as { id: string }
+    const [product, setproduct] = useState<ProductDetailsType | null>(null)
     const [loading, setloading] = useState<boolean>(true)
     const [mainImage, setMainImage] = useState<string | undefined>(product?.images[0])
     const [Category, setCategory] = useState<ProductType[]>([])
