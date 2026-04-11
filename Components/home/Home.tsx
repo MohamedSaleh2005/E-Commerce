@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import HeroSlider from './HeroSlider'
 import SlideProduct from './SlideProduct'
-import {ProductType} from './productType'
+import { ProductType } from './productType'
 
 const categories = [
   "smartphones",
@@ -14,8 +14,8 @@ const categories = [
   "mens-watches",
 ]
 export default function Home() {
-  const [products, setproducts] = useState <Record<string, ProductType[]>>({})
-  const [loading, setloading] = useState <boolean> (true)
+  const [products, setproducts] = useState<Record<string, ProductType[]>>({})
+  const [loading, setloading] = useState<boolean>(true)
   useEffect(() => {
     const fetchproducts = async () => {
       try {
@@ -39,13 +39,13 @@ export default function Home() {
 
 
   return (
-    loading ? (<p>loading...</p>) : (
-      <div className='w-[80%] m-auto'>
-        <HeroSlider />
-        {categories.map((cat) => (
-        <SlideProduct key={cat} title={cat.replace("-", " ")} data={products[cat]} />
-        ))}
-      </div>
-    )
+
+    <div className='w-[80%] m-auto'>
+      <HeroSlider />
+      {categories.map((cat) => (
+        <SlideProduct key={cat} title={cat.replace("-", " ")} data={products[cat]} loading={loading} />
+      ))}
+    </div>
   )
+
 }

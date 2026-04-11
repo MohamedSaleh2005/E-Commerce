@@ -7,12 +7,13 @@ import { FaStarHalfStroke } from 'react-icons/fa6'
 import { IoMdShare } from 'react-icons/io'
 import { TiShoppingCart } from 'react-icons/ti'
 import { ProductType } from '@/Components/home/productType'
+import Loading from './Loading'
 type ProductDetailsType = ProductType & {
-  brand: string
-  stock: number
-  description: string
-  availabilityStatus: string
-  category: string
+    brand: string
+    stock: number
+    description: string
+    availabilityStatus: string
+    category: string
 }
 export default function page() {
 
@@ -59,7 +60,7 @@ export default function page() {
 
 
 
-    if (loading) return <p>Loading...</p>
+    if (loading) return <Loading />
     if (!product) return <p>Product Not Found</p>
     return (
 
@@ -68,13 +69,14 @@ export default function page() {
             <div className='flex gap-5 items-center mb-10'>
 
                 <div className='w-[40%] flex flex-col items-center'>
+                    {/* Head Image */}
                     <div>
-                        <img src={mainImage} alt={product.title} className='w-auto h-80' />
+                        <img src={mainImage} alt={product.title} className='w-auto h-80 mt-3' />
                     </div>
-
+                    {/* Small Images */}
                     <div className='flex justify-between cursor-pointer gap-5 overflow-hidden'>
                         {product.images.map((img, index) => (
-                            <img src={img} key={index} alt={product.title} className='w-auto h-30' onClick={() => setMainImage(img)}></img>
+                            <img src={img} key={index} alt={product.title} className='w-auto h-25 mt-5' onClick={() => setMainImage(img)}></img>
                         ))}
                     </div>
                 </div>
@@ -107,9 +109,7 @@ export default function page() {
             </div>
 
 
-            {LoadCategory ? (
-                <p>loading...</p>
-            ) : <SlideProduct key={product.category} title={product.category.replace("-", " ")} data={Category} />}
+            <SlideProduct key={product.category} title={product.category.replace("-", " ")} data={Category} loading={loading} />
 
         </div>
     )
