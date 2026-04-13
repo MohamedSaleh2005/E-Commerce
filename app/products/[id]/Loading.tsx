@@ -5,7 +5,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Loading() {
   return (
-    <div className='w-[80%] m-auto'>
+    <div className='w-[80%] m-auto mt-30'>
 
       <div className='flex gap-5 items-center mb-10'>
 

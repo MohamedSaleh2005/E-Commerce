@@ -64,7 +64,7 @@ export default function page() {
     if (!product) return <p>Product Not Found</p>
     return (
 
-        <div className='w-[80%] m-auto'>
+        <div className='w-[80%] m-auto mt-30'>
 
             <div className='flex gap-5 items-center mb-10'>
 
@@ -75,7 +75,7 @@ export default function page() {
                     </div>
                     {/* Small Images */}
                     <div className='flex justify-between cursor-pointer gap-5 overflow-hidden'>
-                        {product.images.map((img, index) => (
+                        {product.images.slice(0,3).map((img, index) => (
                             <img src={img} key={index} alt={product.title} className='w-auto h-25 mt-5' onClick={() => setMainImage(img)}></img>
                         ))}
                     </div>

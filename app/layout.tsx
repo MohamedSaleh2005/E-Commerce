@@ -3,6 +3,8 @@ import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import TopHeader from "@/Components/header/TopHeader";
 import BottomHeader from "@/Components/header/BottomHeader";
+import Header from "@/Components/header/Header";
+import CartProvider from "@/Components/context/CartContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,9 +32,10 @@ export default function RootLayout({
       className={`${inter.variable} ${dmSans.variable} h-full antialiased no-scrollbar`}
     >
       <body className="">
-        <TopHeader />
-        <BottomHeader />
-        {children}
+        <CartProvider>   {/* to TopHeader & Product Components (Cart page )*/}
+          <Header />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

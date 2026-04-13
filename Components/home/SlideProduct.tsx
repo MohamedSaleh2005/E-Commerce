@@ -30,7 +30,7 @@ export default function SlideProduct({ title, data, loading }: Props) {
         navigation={true}
         modules={[Navigation, Autoplay]}
         className="mySwiper"
-        loop={true} autoplay={{ delay: 3500, disableOnInteraction: false, }}
+        loop={true} autoplay={{ delay: 5500, disableOnInteraction: false, }}
       >
         {data?.map((item: ProductType) => (
 

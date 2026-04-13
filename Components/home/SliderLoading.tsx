@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 
 export default function SliderLoading() {
     return (
-        <>
+        <div className="mt-15">
             {/* Header */}
             <div className='relative mb-5 py-2 border-b border-(--border-color) top_slide'>
                 <Skeleton height={18} width={200} />
@@ -28,6 +28,6 @@ export default function SliderLoading() {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
