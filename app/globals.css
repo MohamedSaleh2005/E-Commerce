@@ -85,9 +85,8 @@ a{
 }
 .btn{
   padding: 5px 10px;
-  font-size: 13px;
+  font-size: 10px;
   text-transform: capitalize;
-  border-radius: 2px;
   cursor: pointer;
   background: var(--main-color);
   color: var(--white-color);

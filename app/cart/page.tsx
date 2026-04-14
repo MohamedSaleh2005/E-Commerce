@@ -4,8 +4,8 @@ import React, { useContext } from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 
 export default function Page() {
-    const { cartItems } = useContext(CartContext)!
-    const total = cartItems.reduce((acc, item) => acc + item.price, 0)
+    const { cartItems, IncreaseQuantity, DecreaseQuantity, RemoveItem } = useContext(CartContext)!
+    const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
     return (
         <div className='mt-35'>
             <div className='w-[70%] px-5 border-sm border-(--border-color) shadow shadow-[#2d2c2c] rounded-[5px] mx-auto'>
@@ -13,7 +13,7 @@ export default function Page() {
 
                 <div className='h-60 overflow-y-scroll no-scrollbar'>
                     {cartItems.length === 0 ? (
-                        <p>Your Cart Is empty.</p>
+                        <p className='text-(--p-color) mt-1'>Your Cart Is empty.</p>
                     ) : (
                         cartItems.map((item, index) => (
                             <div key={index} className='flex items-center gap-5 justify-between h-30 border-b last:border-b-0 border-(--border-color) pr-5'>
@@ -24,15 +24,15 @@ export default function Page() {
                                         <h4 className=' font-medium text-[14px] overflow-hidden ParaGraph'>{item.name}</h4>
                                         <p className='my-1 text-(--p-color)'>${item.price}</p>
 
-                                        <div className='flex items-center gap-2'>
-                                            <button className='w-4.5 h-4.5 pb-1 flex items-center justify-center cursor-pointer rounded-xs border border-(--border-color) bg-(--border-color)'>-</button>
-                                            <span className='w-6 h-6 pb-1 flex items-center justify-center cursor-pointer rounded-xs border border-(--border-color) bg-(--border-color) text-(--main-color) text-xs font-medium'>1</span>
-                                            <button className='w-4.5 h-4.5 pb-1 flex items-center justify-center cursor-pointer rounded-xs border border-(--border-color) bg-(--border-color)'>+</button>
+                                        <div className='flex items-center gap-2 mt-2'>
+                                            <button className='w-4.5 h-4.5 pb-1 flex items-center justify-center cursor-pointer rounded-xs border border-(--border-color) bg-(--border-color)' onClick={() => DecreaseQuantity(item.id)}>-</button>
+                                            <span className='w-6 h-6 pb-1 flex items-center justify-center cursor-pointer rounded-xs border border-(--border-color) bg-(--border-color) text-(--main-color) text-xs font-medium'>{item.quantity}</span>
+                                            <button className='w-4.5 h-4.5 pb-1 flex items-center justify-center cursor-pointer rounded-xs border border-(--border-color) bg-(--border-color)' onClick={() => IncreaseQuantity(item.id)}>+</button>
                                         </div>
                                     </div>
 
                                 </div>
-                                <button className='cursor-pointer text-red-600 text-lg hover:scale-110 transition-all duration-300'><FaTrashAlt /></button>
+                                <button className='cursor-pointer text-red-600 text-lg hover:scale-110 transition-all duration-300' onClick={() => RemoveItem(item.id)}><FaTrashAlt /></button>
                             </div>
                         ))
                     )}

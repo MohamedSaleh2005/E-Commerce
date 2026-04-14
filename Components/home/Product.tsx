@@ -5,6 +5,8 @@ import { IoMdShare } from 'react-icons/io'
 import { ProductType } from './productType'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
+import toast from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
 
 type Props = {
   item: ProductType
@@ -12,8 +14,35 @@ type Props = {
 
 export default function Product({ item }: Props) {
 
+  const router = useRouter()
   const { cartItems, addToCart } = useContext(CartContext)!
   const IsInCart = cartItems.some((i: { id: number }) => i.id === item.id);
+
+  const HandleToCart = () => {
+    addToCart({
+      id: item.id,
+      name: item.title,
+      price: item.price,
+      images: item.images[0]
+    })
+
+    toast.success(
+      <div className='flex items-center gap-5 min-w-60 max-w-60 '>
+        <img src={item.images[0]} alt="" className='h-12.5 w-auto object-cover' />
+
+        <div className='flex flex-col gap-1 text-sm'>
+          <strong className='overflow-hidden ParaGraph '>{item.title}</strong>
+          Added To Cart
+          <div>
+            <button className='btn mt-1 rounded-2xl' onClick={() => router.push('/cart')}>
+              View Cart
+            </button>
+          </div>
+        </div>
+      </div>,
+      { duration: 3500 }
+    )
+  }
 
 
 
@@ -43,7 +72,7 @@ export default function Product({ item }: Props) {
       </Link>
 
       <div className='absolute top-[40%] text-sm translate-y-[-50%] flex flex-col -right-12.5 gap-3.5 RemoveIcon transition-all duration-400'>
-        <span className={`w-7 h-7 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300 ${IsInCart ? "bg-(--main-color) text-white hover:text-white pointer-events-none" : ""} `} onClick={() => addToCart({ id: item.id, name: item.title, price: item.price, images: item.images[0] })}><FaCartArrowDown /></span>
+        <span className={`w-7 h-7 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300 ${IsInCart ? "bg-(--main-color) text-white hover:text-white pointer-events-none" : ""} `} onClick={HandleToCart}><FaCartArrowDown /></span>
         <span className='w-7 h-7 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300'><FaRegHeart /></span>
         <span className='w-7 h-7 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300'><IoMdShare /></span>
       </div>

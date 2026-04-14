@@ -5,6 +5,7 @@ import TopHeader from "@/Components/header/TopHeader";
 import BottomHeader from "@/Components/header/BottomHeader";
 import Header from "@/Components/header/Header";
 import CartProvider from "@/Components/context/CartContext";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,6 +35,15 @@ export default function RootLayout({
       <body className="w-[80%] m-auto mt-30">
         <CartProvider>   {/* to TopHeader & Product Components (Cart page )*/}
           <Header />
+          <Toaster position="bottom-right" toastOptions={{
+            style: {
+              background: '#e9e9e9',
+              borderRadius: '5px',
+              padding: '14px'
+            }
+          }}>
+
+          </Toaster>
           {children}
         </CartProvider>
       </body>
