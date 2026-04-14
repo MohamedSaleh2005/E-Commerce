@@ -64,7 +64,7 @@ export default function page() {
     if (!product) return <p>Product Not Found</p>
     return (
 
-        <div className='w-[80%] m-auto mt-30'>
+        <div className=''>
 
             <div className='flex gap-5 items-center mb-10'>
 

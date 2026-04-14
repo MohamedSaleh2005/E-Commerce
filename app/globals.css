@@ -30,7 +30,7 @@ font-family: var(--font-dm-sans);
 
 input,button,select,textarea{
   outline: none;
-  border:none
+  
 }
 a{
   text-decoration: none;
@@ -126,6 +126,3 @@ a{
 
 
 
-.In-Cart{
-  
-}

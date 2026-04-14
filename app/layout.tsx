@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${dmSans.variable} h-full antialiased no-scrollbar`}
     >
-      <body className="">
+      <body className="w-[80%] m-auto mt-30">
         <CartProvider>   {/* to TopHeader & Product Components (Cart page )*/}
           <Header />
           {children}

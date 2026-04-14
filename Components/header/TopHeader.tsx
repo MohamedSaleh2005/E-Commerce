@@ -9,8 +9,8 @@ import { CartContext } from '../context/CartContext';
 
 
 export default function TopHeader() {
-  
-  const {cartItems} = useContext(CartContext)!
+
+  const { cartItems } = useContext(CartContext)!
   return (
     <div>
       <div className='flex items-center justify-between py-3.75  w-[80%] m-auto'>
@@ -34,8 +34,10 @@ export default function TopHeader() {
 
           {/* Cart Count*/}
           <div className='relative cursor-pointer'>
-            <BsCart4 className='text-[24px]' />
-            <span className='absolute -top-1.75 -right-2 flex items-center justify-center w-4 h-4 text-xs rounded-full bg-(--main-color) text-white'>{cartItems.length}</span>
+            <Link href={'/cart'}>
+              <BsCart4 className='text-[24px]' />
+              <span className='absolute -top-1.75 -right-2 flex items-center justify-center w-4 h-4 text-xs rounded-full bg-(--main-color) text-white'>{cartItems.length}</span>
+            </Link>
           </div>
 
         </div>

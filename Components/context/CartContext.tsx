@@ -5,6 +5,7 @@ type CartItem = {
   id: number
   name: string
   price: number
+  images: string
 }
 
 type CartContextType = {

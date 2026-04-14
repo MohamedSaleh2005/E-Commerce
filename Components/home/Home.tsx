@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
 
-    <div className='w-[80%] m-auto mt-35'>
+    <div className='mt-35'>
       <HeroSlider />
       {categories.map((cat) => (
         <SlideProduct key={cat} title={cat.replace("-", " ")} data={products[cat]} loading={loading} />
