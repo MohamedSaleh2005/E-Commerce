@@ -34,7 +34,7 @@ export default function Product({ item }: Props) {
           <strong className='overflow-hidden ParaGraph '>{item.title}</strong>
           Added To Cart
           <div>
-            <button className='btn mt-1 rounded-2xl' onClick={() => router.push('/cart')}>
+            <button className='btn mt-1 rounded-2xl bg-(--main-color) text-white' onClick={() => router.push('/cart')}>
               View Cart
             </button>
           </div>

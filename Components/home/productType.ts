@@ -4,3 +4,11 @@ export type ProductType = {
   price: number
   images: string[]
 }
+
+export type ProductDetailsType = ProductType & {
+    brand: string
+    stock: number
+    description: string
+    availabilityStatus: string
+    category: string
+}
