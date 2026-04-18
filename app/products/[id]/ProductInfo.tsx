@@ -1,6 +1,6 @@
 "use client"
-import { CartContext } from '@/Components/context/CartContext'
-import { ProductDetailsType } from '@/Components/home/productType'
+import { CartContext } from '@/Components/context _ to all/CartContext'
+import { ProductDetailsType } from '@/Components/context _ to all/productType'
 import { useRouter } from 'next/navigation'
 import { useContext } from 'react'
 import toast from 'react-hot-toast'

@@ -5,7 +5,7 @@ import logo from '../../public/img/logo.png'
 import { FaRegHeart, FaSearch } from "react-icons/fa";
 import { BsCart4 } from 'react-icons/bs';
 import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { CartContext } from '../context _ to all/CartContext';
 
 
 export default function TopHeader() {

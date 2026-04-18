@@ -2,7 +2,7 @@
 import SlideProduct from '@/Components/home/SlideProduct'
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { ProductDetailsType, ProductType } from '@/Components/home/productType'
+import { ProductDetailsType, ProductType } from '@/Components/context _ to all/productType'
 import Loading from './Loading'
 import ProductImages from './ProductImages'
 import ProductInfo from './ProductInfo'

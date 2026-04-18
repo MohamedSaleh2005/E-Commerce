@@ -1,4 +1,4 @@
-import { ProductDetailsType, ProductType } from '@/Components/home/productType'
+import { ProductDetailsType, ProductType } from '@/Components/context _ to all/productType'
 import React from 'react'
 
 type Props = {

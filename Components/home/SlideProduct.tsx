@@ -2,11 +2,11 @@
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Product from './Product'
-import { ProductType } from './productType'
+import { ProductType } from '../context _ to all/productType'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import SliderLoading from './SliderLoading';
+import SliderLoading from '../context _ to all/SliderLoading';
 
 type Props = {
   title: string

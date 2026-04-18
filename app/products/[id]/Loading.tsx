@@ -1,4 +1,4 @@
-import SliderLoading from '@/Components/home/SliderLoading';
+import SliderLoading from '@/Components/context _ to all/SliderLoading';
 import React from 'react'
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";

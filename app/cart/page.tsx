@@ -1,5 +1,5 @@
 "use client"
-import { CartContext } from '@/Components/context/CartContext'
+import { CartContext } from '@/Components/context _ to all/CartContext'
 import React, { useContext } from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 

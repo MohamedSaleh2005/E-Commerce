@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import HeroSlider from './HeroSlider'
 import SlideProduct from './SlideProduct'
-import { ProductType } from './productType'
+import { ProductType } from '../context _ to all/productType'
+import Transition from '@/Components/context _ to all/Transition'
 
 const categories = [
   "smartphones",
@@ -40,7 +41,7 @@ export default function Home() {
 
   return (
 
-    <div className='mt-35'>
+      <div className='mt-35'>
       <HeroSlider />
       {categories.map((cat) => (
         <SlideProduct key={cat} title={cat.replace("-", " ")} data={products[cat]} loading={loading} />

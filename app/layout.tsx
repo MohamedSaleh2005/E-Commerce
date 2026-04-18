@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
-import TopHeader from "@/Components/header/TopHeader";
-import BottomHeader from "@/Components/header/BottomHeader";
 import Header from "@/Components/header/Header";
-import CartProvider from "@/Components/context/CartContext";
+import CartProvider from "@/Components/context _ to all/CartContext";
 import { Toaster } from "react-hot-toast";
+import ClientLayout from "@/Components/context _ to all/ClientLayout"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,6 +34,7 @@ export default function RootLayout({
       <body className="w-[80%] m-auto mt-30">
         <CartProvider>   {/* to TopHeader & Product Components (Cart page )*/}
           <Header />
+
           <Toaster position="bottom-right" toastOptions={{
             style: {
               background: '#e9e9e9',
@@ -42,9 +42,12 @@ export default function RootLayout({
               padding: '14px'
             }
           }}>
-
           </Toaster>
-          {children}
+
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+
         </CartProvider>
       </body>
     </html>
