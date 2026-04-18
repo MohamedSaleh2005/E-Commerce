@@ -2,10 +2,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../../public/img/logo.png'
-import { FaRegHeart, FaSearch } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 import { BsCart4 } from 'react-icons/bs';
 import { useContext } from 'react';
 import { CartContext } from '../context _ to all/CartContext';
+import SearchBox from '../../app/search/[query]/SearchBox';
 
 
 export default function TopHeader() {
@@ -19,10 +20,7 @@ export default function TopHeader() {
           <Image src={logo} alt="logo" className='w-30' />
         </Link>
 
-        <form action="" className='w-100 flex items-center bg-(--bg-color) rounded-[30px] border border-(--main-color)'>
-          <input type="text" name='search' placeholder='Search all products' className='h-7.75 w-90 py-1.25 px-7.5 bg-(--bg-color) rounded-[30px] text-sm' />
-          <button type='submit' className='h-7.75 w-15 bg-(--main-color) text-[18px] rounded-r-[30px] cursor-pointer '><FaSearch className='m-auto text-(--white-color) text-sm' /></button>
-        </form>
+        <SearchBox />
 
         <div className='flex gap-7.5 items-center'>
 
