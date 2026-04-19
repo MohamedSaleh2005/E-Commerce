@@ -52,7 +52,7 @@ export default function Loading() {
 
           {/* icons */}
           <div className='flex gap-5.5'>
-            {Array(3).fill(0).map((_, i) => (
+            {Array(2).fill(0).map((_, i) => (
               <Skeleton key={i} circle height={27} width={27} />
             ))}
           </div>

@@ -15,9 +15,36 @@ type Props = {
 export default function Product({ item }: Props) {
 
   const router = useRouter()
-  const { cartItems, addToCart } = useContext(CartContext)!
-  const IsInCart = cartItems.some((i: { id: number }) => i.id === item.id);
+  const { cartItems, addToCart, AddToFav, Favourites, RemoveFav } = useContext(CartContext)!
 
+  // Handle Favourites
+  const IsInFav = Favourites.some((i: { id: number }) => i.id === item.id);
+  const HandleToFav = () => {
+    if (IsInFav) {
+      RemoveFav(item.id)
+      toast.error(
+        <div className='text-sm w-60'>
+          {`${item.title} Removed From Favourites`}
+        </div>
+      )
+    } else {
+      AddToFav({
+        id: item.id,
+        name: item.title,
+        price: item.price,
+        images: item.images[0]
+      })
+      toast.success(
+        <div className='text-sm w-60'>
+          {`${item.title} Added To Favourites`}
+        </div>
+      )
+    }
+  }
+
+  // Handle Cart
+
+  const IsInCart = cartItems.some((i: { id: number }) => i.id === item.id);
   const HandleToCart = () => {
     addToCart({
       id: item.id,
@@ -25,6 +52,7 @@ export default function Product({ item }: Props) {
       price: item.price,
       images: item.images[0]
     })
+
 
     toast.success(
       <div className='flex items-center gap-5 min-w-60 max-w-60 '>
@@ -73,7 +101,7 @@ export default function Product({ item }: Props) {
 
       <div className='absolute top-[40%] text-sm translate-y-[-50%] flex flex-col -right-12.5 gap-3.5 RemoveIcon transition-all duration-400'>
         <span className={`w-7 h-7 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300 ${IsInCart ? "bg-(--main-color) text-white hover:text-white pointer-events-none" : ""} `} onClick={HandleToCart}><FaCartArrowDown /></span>
-        <span className='w-7 h-7 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300'><FaRegHeart /></span>
+        <span className={`w-7 h-7 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300 ${IsInFav ? "bg-(--main-color) text-white hover:text-white" : ""}`} onClick={HandleToFav}><FaRegHeart /></span>
         <span className='w-7 h-7 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300'><IoMdShare /></span>
       </div>
     </div>

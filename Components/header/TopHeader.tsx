@@ -11,7 +11,7 @@ import SearchBox from '../../app/search/[query]/SearchBox';
 
 export default function TopHeader() {
 
-  const { cartItems } = useContext(CartContext)!
+  const { cartItems, Favourites } = useContext(CartContext)!
   return (
     <div>
       <div className='flex items-center justify-between py-3.75  w-[80%] m-auto'>
@@ -26,15 +26,17 @@ export default function TopHeader() {
 
           {/* Favourite Count*/}
           <div className='relative cursor-pointer'>
-            <FaRegHeart className='text-[20px]' />
-            <span className='absolute -top-2 -right-2.5 flex items-center justify-center w-4 h-4 text-xs rounded-full bg-(--main-color) text-white'>0</span>
+            <Link href={'/favourites'}>
+              <FaRegHeart className='text-[20px]' />
+              <span className='absolute -top-2.5 -right-3 flex items-center justify-center w-4.5 h-4.5 text-xs rounded-full bg-(--main-color) text-white'>{Favourites.length}</span>
+            </Link>
           </div>
 
           {/* Cart Count*/}
           <div className='relative cursor-pointer'>
             <Link href={'/cart'}>
               <BsCart4 className='text-[24px]' />
-              <span className='absolute -top-1.75 -right-2 flex items-center justify-center w-4 h-4 text-xs rounded-full bg-(--main-color) text-white'>{cartItems.length}</span>
+              <span className='absolute -top-2 -right-2.5 flex items-center justify-center w-4.5 h-4.5 text-xs rounded-full bg-(--main-color) text-white'>{cartItems.length}</span>
             </Link>
           </div>
 
