@@ -40,33 +40,34 @@ export default function BottomHeader() {
 
   return (
     <div className='bg-(--main-color) '>
-      <div className='flex items-center justify-between w-[80%] m-auto '>
-        <nav className='flex items-center text-sm gap-25 h-10'>
+      <div className='flex items-center lg:justify-between lg:w-[80%]  px-3 lg:px-0 md:mr-4 lg:m-auto'>
+        <nav className='flex items-center text-sm h-10 m-auto lg:m-0'>
 
-          <div className='w-55 h-full relative' onClick={() => setopen(!open)}>
-            <div className='h-full w-full flex justify-between items-center bg-(--main-color) px-3.75 cursor-pointer text-(--white-color)'>
-              <IoMdList />
-              <p className='font-semibold'>Browse Category</p>
-              <FaAngleUp className={`${open ? "rotate-180" : ""} transition-all duration-300`} />
+          <div className='md:w-50 h-full relative' onClick={() => setopen(!open)}>
+            {/* Category */}
+            <div className='h-full w-full flex justify-between items-center bg-(--main-color) m-auto cursor-pointer text-(--white-color)'>
+              <IoMdList className='md:ml-8 md:mr-0 lg:mx-0'/>
+              <p className='font-semibold hidden md:block'>Browse Category</p>
+              <FaAngleUp className={`hidden md:block mr-3 lg:mx-0${open ? "rotate-180" : ""} transition-all duration-300`} />
             </div>
 
 
-            <div className={`absolute top-full left-0 w-full bg-(--white-color)  border flex flex-col border-[#999] max-h-75 overflow-y-auto no-scrollbar transition-all duration-700 Close z-5 ${open ? "Open" : ""}`}>
+            <div className={`absolute top-full left-0 w-40 bg-(--white-color) border flex flex-col border-[#999] max-h-75 overflow-y-auto no-scrollbar transition-all duration-700 Close z-5 ${open ? "Open" : ""}`}>
               {Category.map((cat) => (
                 <Link href={`/category/${cat.slug}`} key={cat.slug} className='py-2 px-1 text-sm border-b border-(--border-color)'>{cat.name}</Link>
               ))}
             </div>
           </div>
-
-          <div className='flex h-full'>
+              {/* Nav Items */}
+          <div className='flex h-full md:gap-2 ml-8 lg:ml-25'>
             {navlinks.map((li) => (
-              <li key={li.title} className={`h-full flex items-center px-6.25 text-(--white-color) ${location === li.link ? "bg-sky-700/60" : ""}`}><Link href={li.link}>{li.title}</Link></li>
+              <li key={li.title} className={`h-full flex items-center lg:px-5 px-2 text-[10px] md:text-[14px] text-(--white-color) ${location === li.link ? "bg-sky-700/60" : ""}`}><Link href={li.link}>{li.title}</Link></li>
             ))}
           </div>
 
         </nav>
 
-        <div className='flex gap-4 text-lg'>
+        <div className='flex gap-4 ml-2 md:mr-15 lg:mr-0 text-lg'>
           <Link href={''}><PiSignInBold className='text-(--white-color)' /></Link>
           <Link href={''}><FaUserPlus className='text-(--white-color)' /></Link>
         </div>

@@ -26,11 +26,24 @@ export default function SlideProduct({ title, data, loading }: Props) {
 
       <Swiper
         slidesPerView={5}
-        spaceBetween={30}
+        spaceBetween={20}
         navigation={true}
         modules={[Navigation, Autoplay]}
         className="mySwiper"
         loop={true} autoplay={{ delay: 5500, disableOnInteraction: false, }}
+        breakpoints={{
+          0: {
+            slidesPerView: 2, // موبايل
+            spaceBetween:15
+          },
+          768: {
+            slidesPerView: 3, // تابلت
+          },
+          1024: {
+            slidesPerView: 5, // ديسكتوب
+          },
+        }}
+
       >
         {data?.map((item: ProductType) => (
 

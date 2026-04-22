@@ -52,7 +52,7 @@ export default function ProductInfo({ product }: Props) {
 
 
         toast.success(
-            <div className='flex products-center gap-5 min-w-60 max-w-60 '>
+            <div className='flex items-center gap-5 w-50 md:w-70'>
                 <img src={product.images[0]} alt="" className='h-12.5 w-auto object-cover' />
 
                 <div className='flex flex-col gap-1 text-sm'>
@@ -70,7 +70,7 @@ export default function ProductInfo({ product }: Props) {
     }
     return (
 
-        <div className='w-[50%]'>
+        <div className='md:ml-4 lg:w-[40%]'>
             <h1 className='font-bold text-[30px] text-(--main-color)'>{product.title}</h1>
             <div className='gap-1.25 flex my-1.5 text-[#ffdf3df6]'>
                 <FaStar />
@@ -83,12 +83,12 @@ export default function ProductInfo({ product }: Props) {
             <p className='font-bold'>${product.price}</p>
             <h5 className='my-2 font-normal'>Availability:<span className='text-(--main-color)'> {product.availabilityStatus}</span></h5>
             <h5 className='font-normal'>Brand:<span className='text-(--main-color)'> {product.brand}</span></h5>
-            <p className='w-[130%] text-sm my-2 text-(--p-color)'>{product.description}</p>
+            <p className='lg:w-[130%] md:w-[120%] text-[12px] my-2 text-(--p-color) w-full'>{product.description}</p>
             <h5 className='font-semibold text-(--main-color)'>Hurry Up! Only<span> {product.stock} </span>Products Left In The Stock.</h5>
 
             <button className={`btn my-5 rounded-sm border bg-(--main-color) border-(--main-color) transition-all duration-300  ${IsInCart ? "bg-transparent text-(--main-color) pointer-events-none" : "text-white"} `} onClick={HandleToCart}>{IsInCart ? "product In Cart" : "Add to Cart "}<TiShoppingCart className='text-[16px]' /></button>
 
-            <div className='flex gap-3.5 transition-all duration-400'>
+            <div className='flex gap-3.5 transition-all duration-400 mb-5'>
                 <span className={`w-8 h-8 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300 ${IsInFav ? "bg-(--main-color) text-white hover:text-white" : ""}`} onClick={HandleToFav}><FaRegHeart /></span>
                 <span className='w-8 h-8 hover:text-(--main-color) bg-(--bg-color) flex items-center rounded-full cursor-pointer justify-center transition-all duration-300'><IoMdShare /></span>
             </div>

@@ -73,19 +73,18 @@ a{
 .content h3{
   font-size: 3vw;
   text-transform: capitalize;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   color: var(--main-color);
   font-weight: bolder;
   line-height: 1;
 }
 .content p{
   font-size: 1.1vw;
-  margin-top: 2.5vw;
+  margin-top: 1.5vw;
   margin-bottom: 2.5vw;
 }
 .btn{
   padding: 6px 12px;
-  font-size: 13px;
   text-transform: capitalize;
   cursor: pointer;
   display: flex;
@@ -114,7 +113,7 @@ a{
 
 
 .Card:hover .RemoveIcon{
-  right: 8px;
+  right: 14px;
 }
 
 

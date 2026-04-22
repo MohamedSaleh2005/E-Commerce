@@ -7,20 +7,20 @@ export default function Loading() {
   return (
     <div className=''>
 
-      <div className='flex gap-5 items-center mb-10'>
+      <div className='flex flex-col md:flex-row gap-5 items-center mb-10'>
 
         <div className='w-[40%] flex flex-col items-center mt-10'>
 
-          <Skeleton height={280} width={260} className="mt-3" />
+          <Skeleton height={170} width={160} className="mt-3" />
 
-          <div className='flex justify-between gap-12 '>
+          <div className='flex justify-between gap-12 md:mt-15'>
             {Array(3).fill(0).map((_, i) => (
               <Skeleton key={i} height={70} width={70} className='mt-8' />
             ))}
           </div>
         </div>
 
-        <div className='w-[50%] mt-5'>
+        <div className='md:w-[50%] mt-5 md:ml-10'>
 
 
           <Skeleton height={30} width={300} />

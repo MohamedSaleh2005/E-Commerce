@@ -14,7 +14,7 @@ export default function TopHeader() {
   const { cartItems, Favourites } = useContext(CartContext)!
   return (
     <div>
-      <div className='flex items-center justify-between py-3.75  w-[80%] m-auto'>
+      <div className='flex items-center justify-between py-3.75  px-5 lg:px-0 gap-3 md:w-[80%] m-auto'>
 
         <Link href="/" className='w-40'>
           <Image src={logo} alt="logo" className='w-30' />
@@ -22,7 +22,7 @@ export default function TopHeader() {
 
         <SearchBox />
 
-        <div className='flex gap-7.5 items-center'>
+        <div className='flex gap-5 items-center'>
 
           {/* Favourite Count*/}
           <div className='relative cursor-pointer'>

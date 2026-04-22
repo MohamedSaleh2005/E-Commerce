@@ -16,7 +16,7 @@ export default function page() {
         <p className='text-(--p-color) text-sm'>Add Best Selling products To Weekly Line Up</p>
       </div>
 
-      <div className='grid grid-cols-5 gap-5'>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5'>
         {Favourites.map((item: CartItem) => (
           <Product
             key={item.id}

@@ -56,8 +56,8 @@ export default function page() {
     if (!product) return <p>Product Not Found</p>
     return (
 
-        <div className=''>
-            <div className='flex gap-5 items-center mb-10'>
+        <div className='md:mt-40 lg:mt-0'>
+            <div className='flex-col md:flex-row flex gap-10 items-center lg:mb-10'>
                 <ProductImages product={product} mainImage={mainImage} setMainImage={setMainImage} />
                 <ProductInfo product={product} />
             </div>

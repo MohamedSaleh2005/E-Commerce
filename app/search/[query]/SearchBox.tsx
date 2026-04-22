@@ -49,8 +49,8 @@ export default function SearchBox() {
     }
     return (
         <div className='relative'>
-            <form onSubmit={handleSubmit} className='w-100 flex items-center bg-(--bg-color) rounded-[30px] border border-(--main-color)'>
-                <input type="text" name='search' autoComplete='off' placeholder='Search all products' className='h-7.75 w-90 py-1.25 px-7.5 bg-(--bg-color) rounded-[30px] text-sm' onChange={(e) => setSearch(e.target.value)} value={search} />
+            <form onSubmit={handleSubmit} className='w-50 md:w-90 md:mr-5 lg:w-130 flex items-center bg-(--bg-color) rounded-[30px] border border-(--main-color)'>
+                <input type="text" name='search' autoComplete='off' placeholder='Search all products' className='h-7 w-40 md:w-90 lg:w-130 py-1 px-4 bg-(--bg-color) rounded-[30px] text-sm' onChange={(e) => setSearch(e.target.value)} value={search} />
                 <button type='submit' className='h-7.75 w-15 bg-(--main-color) text-[18px] rounded-r-[30px] cursor-pointer '><FaSearch className='m-auto text-(--white-color) text-sm' /></button>
             </form>
 

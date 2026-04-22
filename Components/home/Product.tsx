@@ -62,7 +62,7 @@ export default function Product({ item }: Props) {
           <strong className='overflow-hidden ParaGraph '>{item.title}</strong>
           Added To Cart
           <div>
-            <button className='btn mt-1 rounded-2xl bg-(--main-color) text-white' onClick={() => router.push('/cart')}>
+            <button className='btn mt-1 rounded-2xl bg-(--main-color) text-white text-[12px]' onClick={() => router.push('/cart')}>
               View Cart
             </button>
           </div>
@@ -76,7 +76,7 @@ export default function Product({ item }: Props) {
 
 
   return (
-    <div className={`relative mb-5 w-45 h-75 bg-(--white-color) pb-1.25 px-3.75 border border-(--border-color) hover:border-(--main-color) rounded-[5px] overflow-hidden hover:shadow-lg transition-all duration-300 Card`}>
+    <div className={`relative mb-5 w-39 md:w-48 h-75 bg-(--white-color) pb-1.25 px-3.75 border border-(--border-color) hover:border-(--main-color) rounded-[5px] overflow-hidden hover:shadow-lg transition-all duration-300 Card`}>
       <Link href={`/products/${item.id}`}>
 
         <span className={`flex text-[14px] items-center gap-1 absolute right-[37%] mt-3 font-sans text-(--main-color) transition-all duration-300 ${IsInCart ? "translate-y-0 opacity-100" : "-translate-y-5 opacity-0"} `}><FaCheck className='text-green-500' />In Cart</span>

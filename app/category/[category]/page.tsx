@@ -4,6 +4,8 @@ import SliderLoading from '@/Components/context _ to all/SliderLoading'
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { ProductType } from '@/Components/context _ to all/productType'
+import MoreLoading from './MoreLoading'
+
 
 type ApiResponse = {
   products: ProductType[]
@@ -24,8 +26,13 @@ const [ProCategory, setProCategory] = useState <ProductType[]>([])
   }, [category])
 
   // Skeleton
-  if (loading) return <SliderLoading />
-
+  if (loading) return (
+    <>
+    <SliderLoading />
+    <MoreLoading/>
+    </>
+  )
+  
   return (
     <div>
 
@@ -34,7 +41,7 @@ const [ProCategory, setProCategory] = useState <ProductType[]>([])
         <p className='text-(--p-color) text-sm'>Add Best Selling products To Weekly Line Up</p>
       </div>
 
-      <div className='grid grid-cols-5 gap-5'>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5'>
         {ProCategory.map((item) => (
           <Product item={item} key={item.id} />
         ))}

@@ -8,15 +8,15 @@ type Props = {
 }
 export default function ProductImages({ product, mainImage, setMainImage }: Props) {
   return (
-    <div className='w-[40%] flex flex-col items-center'>
+    <div className='md:w-[40%] flex flex-col items-center'>
       {/* Head Image */}
       <div>
-        <img src={mainImage} alt={product.title} className='w-auto h-80 mt-3' />
+        <img src={mainImage} alt={product.title} className='w-auto h-40 md:h-60 lg:h-75 mt-5 ' />
       </div>
       {/* Small Images */}
-      <div className='flex justify-between cursor-pointer gap-5 overflow-hidden'>
+      <div className='flex justify-between gap-5  overflow-hidden md:mr-12 lg:mr-0 w-90 md:w-80'>
         {product.images.slice(0, 3).map((img, index) => (
-          <img src={img} key={index} alt={product.title} className='w-auto h-25 mt-5' onClick={() => setMainImage(img)}></img>
+          <img src={img} key={index} alt={product.title} className='w-auto h-25 mt-5 cursor-pointer' onClick={() => setMainImage(img)}></img>
         ))}
       </div>
     </div>

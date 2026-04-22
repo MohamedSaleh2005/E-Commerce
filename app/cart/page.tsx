@@ -8,10 +8,10 @@ export default function Page() {
     const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
     return (
         <div className='mt-35'>
-            <div className='w-[70%] px-5 border-sm border-(--border-color) shadow shadow-[#2d2c2c] rounded-[5px] mx-auto'>
+            <div className='md:w-[80%] lg:w-[70%] px-5 border-sm border-(--border-color) shadow shadow-[#2d2c2c] rounded-[5px] mx-auto'>
                 <h1 className='border-b  border-(--border-color) py-3 text-(--main-color) font-bold text-xl'>Order Summary</h1>
 
-                <div className='h-60 overflow-y-scroll no-scrollbar'>
+                <div className='h-120 md:h-150 lg:h-60 overflow-y-scroll no-scrollbar'>
                     {cartItems.length === 0 ? (
                         <p className='text-(--p-color) mt-1'>Your Cart Is empty.</p>
                     ) : (
